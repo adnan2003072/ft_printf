@@ -6,7 +6,7 @@
 /*   By: abouzkra <adnanbouzkraouoi037@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 23:38:22 by abouzkra          #+#    #+#             */
-/*   Updated: 2025/10/25 23:20:23 by abouzkra         ###   ########.fr       */
+/*   Updated: 2025/10/26 16:27:26 by abouzkra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	ft_putstr(char *s)
 {
 	int	i;
 
+	if (!s)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 	i = 0;
 	while (s[i])
 	{
@@ -31,7 +36,7 @@ int	ft_putstr(char *s)
 	return (i);
 }
 
-void	ft_formats(va_list args, char c, int *len)
+static void	ft_formats(va_list args, char c, int *len)
 {
 	if (c == 'c')
 		*len += ft_putchar(va_arg(args, int));

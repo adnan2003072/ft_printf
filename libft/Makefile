@@ -6,7 +6,7 @@
 #    By: abouzkra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 13:54:56 by abouzkra          #+#    #+#              #
-#    Updated: 2025/10/24 22:09:49 by abouzkra         ###   ########.fr        #
+#    Updated: 2025/10/26 15:43:08 by abouzkra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ MOBJS = $(MSRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
 RM = rm -f
 
-all: $(NAME)
+all: $(NAME) clean
 
 $(NAME): $(MOBJS)
 	ar rc $@ $^

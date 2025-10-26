@@ -6,7 +6,7 @@
 /*   By: abouzkra <adnanbouzkraouoi037@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 21:53:19 by abouzkra          #+#    #+#             */
-/*   Updated: 2025/10/25 23:23:48 by abouzkra         ###   ########.fr       */
+/*   Updated: 2025/10/26 16:29:25 by abouzkra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ int	ft_putptr(unsigned long long ptr)
 	int		len;
 
 	if (ptr == 0)
+	{
 		ft_putstr("(nil)");
+		return (5);
+	}
 	len = addr_len(ptr);
 	res = (char *)malloc(len + 1);
 	res[0] = '0';

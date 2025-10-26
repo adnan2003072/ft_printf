@@ -6,7 +6,7 @@
 /*   By: abouzkra <adnanbouzkraouoi037@gmail.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 23:17:23 by abouzkra          #+#    #+#             */
-/*   Updated: 2025/10/25 23:20:59 by abouzkra         ###   ########.fr       */
+/*   Updated: 2025/10/26 15:14:02 by abouzkra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ int		ft_putnbr(int nb);
 int		ft_putnbr_unsigned(unsigned int nb);
 int		ft_putptr(unsigned long long ptr);
 int		ft_puthex(unsigned int nb, char format);
-void	ft_formats(va_list args, char c, int *len);
 
 #endif // !LIBFT_PRINTF_H
