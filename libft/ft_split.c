@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 static size_t	strs_count(char const *s, char c);
 static char		**empty_arr(void);

@@ -6,31 +6,25 @@
 /*   By: abouzkra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:15:10 by abouzkra          #+#    #+#             */
-/*   Updated: 2025/10/24 14:05:49 by abouzkra         ###   ########.fr       */
+/*   Updated: 2025/10/26 09:30:09 by abouzkra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	if (fd == -1)
-		return ;
-	if (n == (1 << 31))
+	if (nb == -2147483648)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(-(n % 10), fd);
+		write (fd, "-2147483648", 11);
+		return ;
 	}
-	else if (n < 0)
+	if (nb < 0)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
+		nb *= -1;
 	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
-	}
-	else
-		ft_putchar_fd(n % 10 + '0', fd);
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd(nb % 10 + '0', fd);
 }

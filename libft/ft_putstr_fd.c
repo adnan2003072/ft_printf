@@ -6,17 +6,17 @@
 /*   By: abouzkra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:08:04 by abouzkra          #+#    #+#             */
-/*   Updated: 2025/10/15 16:11:03 by abouzkra         ###   ########.fr       */
+/*   Updated: 2025/10/26 13:30:10 by abouzkra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
-	if (!fd || !s)
+	if (!s)
 		return ;
 	i = 0;
 	while (s[i])

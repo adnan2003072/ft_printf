@@ -6,13 +6,25 @@
 /*   By: abouzkra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 17:08:42 by abouzkra          #+#    #+#             */
-/*   Updated: 2025/10/24 12:16:38 by abouzkra         ###   ########.fr       */
+/*   Updated: 2025/10/26 09:35:54 by abouzkra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
-static int	contains(const char *set, const char c);
+static int	contains(const char *set, const char c)
+{
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
@@ -22,6 +34,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 
 	if (!s1)
 		return (0);
+	if (!set)
+		return (ft_strdup(s1));
 	if (s1[0] == '\0')
 		return (ft_strdup(""));
 	start = 0;
@@ -37,18 +51,4 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (0);
 	ft_strlcpy(res, s1 + start, end - start + 2);
 	return (res);
-}
-
-static int	contains(const char *set, const char c)
-{
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
 }

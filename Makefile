@@ -6,12 +6,12 @@
 #    By: abouzkra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 13:54:56 by abouzkra          #+#    #+#              #
-#    Updated: 2025/10/26 15:46:19 by abouzkra         ###   ########.fr        #
+#    Updated: 2025/10/26 23:41:56 by abouzkra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = include
 LIBFT = libft

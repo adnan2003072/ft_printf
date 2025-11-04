@@ -6,18 +6,16 @@
 /*   By: abouzkra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:53:09 by abouzkra          #+#    #+#             */
-/*   Updated: 2025/10/23 23:25:40 by abouzkra         ###   ########.fr       */
+/*   Updated: 2025/10/25 16:18:13 by abouzkra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
-	if (!s1 && !s2)
-		return (0);
 	i = 0;
 	while (i < n && (s1[i] || s2[i]))
 	{

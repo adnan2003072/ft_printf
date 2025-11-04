@@ -6,14 +6,14 @@
 #    By: abouzkra <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 13:54:56 by abouzkra          #+#    #+#              #
-#    Updated: 2025/10/26 15:43:08 by abouzkra         ###   ########.fr        #
+#    Updated: 2025/10/26 22:42:16 by abouzkra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
-MSRCS = ft_isalpha.c    \
+MSRCS = ft_isalpha.c      \
 	   ft_isdigit.c       \
 	   ft_isalnum.c       \
 	   ft_isascii.c       \
@@ -62,16 +62,17 @@ MOBJS = $(MSRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
 RM = rm -f
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(MOBJS)
-	ar rc $@ $^
+	ar rcs $@ $^
+	@make clean
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(BOBJS)
-	ar rc $(NAME) $^
+bonus: $(MOBJS) $(BOBJS)
+	ar rcs $(NAME) $^
 
 clean:
 	$(RM) $(MOBJS) $(BOBJS)
@@ -80,3 +81,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re

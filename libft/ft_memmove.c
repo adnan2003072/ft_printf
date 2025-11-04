@@ -6,16 +6,16 @@
 /*   By: abouzkra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:04:57 by abouzkra          #+#    #+#             */
-/*   Updated: 2025/10/20 08:44:06 by abouzkra         ###   ########.fr       */
+/*   Updated: 2025/10/26 09:18:42 by abouzkra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	const unsigned char	*s;
-	unsigned char			*d;
+	unsigned char		*d;
 
 	if (!dest && !src)
 		return (NULL);
