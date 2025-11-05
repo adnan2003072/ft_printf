@@ -60,16 +60,20 @@ int	ft_printf(const char *str, ...)
 	va_list	args;
 	int		len;
 
+	if (!str || write(1, 0, 0) < 0)
+		return (-1);
 	i = 0;
 	len = 0;
 	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] == '%')
+		if (str[i] == '%' && str[i + 1])
 		{
 			ft_formats(args, str[i + 1], &len);
 			i++;
 		}
+		else if (str[i] == '%' && !str[i + 1])
+			return (-1);
 		else
 			len += ft_putchar(str[i]);
 		i++;
