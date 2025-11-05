@@ -13,8 +13,6 @@
 NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDE = include
-LIBFT = libft
 SRCDIR = src/
 SRC_FILES = ft_printf ft_putnbr ft_putptr ft_puthex
 
@@ -22,15 +20,13 @@ SRCS = $(addprefix $(SRCDIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(SRCDIR), $(addsuffix .o, $(SRC_FILES)))
 RM = rm -f
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	@make -C $(LIBFT)
-	@mv ./libft/libft.a $(NAME)
-	ar rcs $@ $^
 
-%.o: %.c
+%.o: %.c include/ft_printf.h
 	$(CC) $(CFLAGS) -Iinclude -c $< -o $@
+	ar rcs $(NAME) $@
 
 clean: 
 	$(RM) $(OBJS)
@@ -39,6 +35,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-test: main.c libftprintf.a
-	$(CC) $< -L. -lftprintf && ./a.out

@@ -11,46 +11,6 @@
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-//
-// static int	addr_len(unsigned long long ptr)
-// {
-// 	int	i;
-//
-// 	i = 2;
-// 	while (ptr >= 16)
-// 	{
-// 		ptr /= 16;
-// 		i++;
-// 	}
-// 	return (i);
-// }
-//
-// int	ft_putptr(unsigned long long ptr)
-// {
-// 	char	*res;
-// 	int		len;
-//
-// 	if (ptr == 0)
-// 	{
-// 		ft_putstr("(nil)");
-// 		return (5);
-// 	}
-// 	len = addr_len(ptr);
-// 	res = (char *)malloc(len + 1);
-// 	res[0] = '0';
-// 	res[1] = 'x';
-// 	res[len] = '\0';
-// 	while (len >= 2)
-// 	{
-// 		res[len] = HEX[ptr % 16];
-// 		ptr /= 16;
-// 		len--;
-// 	}
-// 	len = ft_strlen(res);
-// 	ft_putstr(res);
-// 	free(res);
-// 	return (len);
-// }
 
 static int	ft_puthex_long(unsigned long long ptr)
 {
